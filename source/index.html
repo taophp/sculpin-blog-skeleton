@@ -1,33 +1,26 @@
 ---
-layout: default
-title: Home
-generator: pagination
-pagination:
-    max_per_page: 3
-use:
-    - posts
+layout: base
+use: ["posts"]
+
 ---
-{% for post in page.pagination.items %}
-    <article>
-        <header>
-            <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
-        </header>
-        <div>
-            {{ post.blocks.content|raw }}
-        </div>
-        {% if post.meta.tags %}
-            <p class="tags">
-            Tags:
-            {% for tag in post.meta.tags %}
-            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-            </p>
-        {% endif %}
-    </article>
-{% endfor %}
-{% if page.pagination.previous_page or page.pagination.next_page %}
-    <nav>
-        {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-        {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
-    </nav>
-{% endif %}
+
+<div class="card-columns">
+    {% for post in data.posts %}
+		<div class="card text-center card-inverse">
+			{% if post.img %}
+				<img width="355" height="222" class="card-img-top" src="{{ post.img }}"{% if post.imgalt %} alt="{{ post.imgalt }}"{% endif %}>
+			{% endif %}
+			<div class="card-block">
+				<h2 class="card-title">{{ post.title|raw }}</h2>
+				<p class="card-text">{{ post.description|nl2br }}</p>
+				<p class="lead"><a class="btn btn-outline-warning" href="{{ site.url }}{{ post.url }}" role="button">Lire...</a></p>
+			</div>
+		</div>
+    {% endfor %}
+</div>
+<script>
+$(document).ready(function() {
+	$('.card').click(function(){location=$(this).find('a').last().attr('href');});
+	$('.card').css('cursor','pointer');
+});
+</script>

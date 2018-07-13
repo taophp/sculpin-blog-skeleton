@@ -6,4 +6,6 @@
 /output_*/
 /source/components/
 s3.conf
-/vendor/source/_posts/*
+/vendor/*
+/source/_posts/*
+/source/img/*
