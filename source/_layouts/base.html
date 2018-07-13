@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:og="http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} | StephaneMourey.fr</title>
+	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="//stephanemourey.fr/res/bootstrap.min.css">
+	<link rel="stylesheet" href="//stephanemourey.fr/res/webfonts/droidserif_regular_macroman/stylesheet.css">
+	<link rel="stylesheet" href="//stephanemourey.fr/res/webfonts/gnutypewriter/stylesheet.css">
+	<script src="//stephanemourey.fr/res/jquery-3.2.1.min.js"></script>
+	<script src="//stephanemourey.fr/res/tether.min.js"></script>
+	<script src="//stephanemourey.fr/res/bootstrap.min.js"></script>
+	<script src="//stephanemourey.fr/res/jquery.ba-hashchange.js"></script>
+	<script src="//stephanemourey.fr/res/js.cookie.js"></script>
+	<script src="//stephanemourey.fr/res/js.cookie.js"></script>
+	<script src="//stephanemourey.fr/res/jquery.paging.min.js"></script>
+	<script src="//stephanemourey.fr/res/main.js"></script>
+	{% if page.layout == 'post' %}
+		{% if site.nopagination or page.nopagination %}{% else %}
+			<script src="//stephanemourey.fr/res/paginate.js"></script>
+		{% endif %}
+	{% endif %}
+	<link rel="stylesheet" href="//stephanemourey.fr/res/main.css">
+	<style>
+		.card .social img {filter:none;}
+		.card:hover .social img {filter:invert(100%);}
+	</style>
+	<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+	{% if page.title %}<meta property="og:site_name" content="{{ site.title }}">{% endif %}
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+	<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:image" content="{% if page.img %}{{ site.url }}{{ page.img }} {% else %}http://stephanemourey.fr/res/img/7141836899_10aa089180_b.jpg{% endif %}">
+	<link rel="apple-touch-icon" sizes="57x57" href="//stephanemourey.fr/res/img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="//stephanemourey.fr/res/img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="//stephanemourey.fr/res/img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="//stephanemourey.fr/res/img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="//stephanemourey.fr/res/img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="//stephanemourey.fr/res/img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="//stephanemourey.fr/res/img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="//stephanemourey.fr/res/img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="//stephanemourey.fr/res/img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="//stephanemourey.fr/res/img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="//stephanemourey.fr/res/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="//stephanemourey.fr/res/img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="//stephanemourey.fr/res/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="//stephanemourey.fr/res/img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="//stephanemourey.fr/res/img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+	<div class="container card text-center card-inverse">
+		<h1 class="display-2">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+		<p class="lead">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</p>
+	</div>
+		<header class="container"><a href="//stephanemourey.fr">StephaneMourey<small>.fr</small></a> > <a href="/">{{ site.title }}</a> {% if page.title %}> {{ page.title }}{% endif %}</header>
+</div>
+
+<div id="container" class="container">
+	{% block content %}{% endblock %}
+	<footer>
+		<div class="footermenu">
+			<div class="links">
+			<a href="maito:steph@stephanemourey.fr">Contact</a>
+			</div>
+			<div class="social">
+				<a href="https://www.facebook.com/stephane.mourey.14" title="Retrouvez-moi sur Facebook"><img src="//stephanemourey.fr/res/img/facebook.svg" alt="Facebook logo"></a>
+				<a href="https://twitter.com/ImpossibleExil" title="Suivez-moi sur Twitter"><img src="//stephanemourey.fr/res/img/twitter.svg" alt="Twitter logo"></a>
+				<a href="https://github.com/taophp" title="Mes projets sur GitHub"><img src="//stephanemourey.fr/res/img/github.svg" alt="GitHub logo"></a>
+			</div>
+		</div>
+		<div class="licence">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>Cette œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International</a>.
+		</div>
+	</footer>
+</div>
+</body>
+</html>
