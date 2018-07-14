@@ -7,7 +7,7 @@
 {% block content_wrapper %}
     <article>
         <header>
-            <h2>{{ page.title }}</h2>
+            <h1>{{ page.title|raw }}</h1>
         </header>
         <div>
             {{ page.blocks.content|raw }}
@@ -33,10 +33,10 @@
             <nav class="article">
                 <ul>
                     {% if page.next_post %}
-                        <li>Suivant&nbsp;: <a class="next" href="{{ site.url }}{{ page.next_post.url }}" title="{{ page.next_post.title }}"><span class="title">{{ page.next_post.title }}</span></a></li>
+                        <li>Suivant<br> <a class="next" href="{{ site.url }}{{ page.next_post.url }}" title="{{ page.next_post.title }}"><span class="title">{{ page.next_post.title|raw }}</span></a></li>
                     {% endif %}
                     {% if page.previous_post %}
-                        <li>Précédent&nbsp;: <a class="previous" href="{{ site.url }}{{ page.previous_post.url }}" title="{{ page.previous_post.title }}"><span class="title">{{ page.previous_post.title }}</span></a></li>
+                        <li>Précédent<br> <a class="previous" href="{{ site.url }}{{ page.previous_post.url }}" title="{{ page.previous_post.title }}"><span class="title">{{ page.previous_post.title|raw }}</span></a></li>
                     {% endif %}
                 </ul>
             </nav>

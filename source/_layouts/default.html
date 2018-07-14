@@ -14,23 +14,25 @@
         <link rel="apple-touch-startup-image" href="{{ site.url }}/images/jackson/2048x2048.png">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="shortcut icon" sizes="76x76" href="{{ site.url }}/images/jackson/76x76.png">
-        <link rel="shortcut icon" sizes="120x120" href="{{ site.url }}/images/jackson/120x120.png">
-        <link rel="shortcut icon" sizes="128x128" href="{{ site.url }}/images/jackson/128x128.png">
-        <link rel="shortcut icon" sizes="152x152" href="{{ site.url }}/images/jackson/152x152.png">
-        <link rel="shortcut icon" sizes="196x196" href="{{ site.url }}/images/jackson/196x196.png">
-        <link rel="shortcut icon" sizes="512x512" href="{{ site.url }}/images/jackson/512x512.png">
-        <link rel="shortcut icon" sizes="1024x1024" href="{{ site.url }}/images/jackson/1024x1024.png">
-        <link rel="shortcut icon" sizes="2048x2048" href="{{ site.url }}/images/jackson/2048x2048.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/images/jackson/76x76.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/images/jackson/120x120.png">
-        <link rel="apple-touch-icon" sizes="128x128" href="{{ site.url }}/images/jackson/128x128.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/images/jackson/152x152.png">
-        <link rel="apple-touch-icon" sizes="196x196" href="{{ site.url }}/images/jackson/196x196.png">
-        <link rel="apple-touch-icon" sizes="512x512" href="{{ site.url }}/images/jackson/512x512.png">
-        <link rel="apple-touch-icon" sizes="1024x1024" href="{{ site.url }}/images/jackson/1024x1024.png">
-        <link rel="apple-touch-icon" sizes="2048x2048" href="{{ site.url }}/images/jackson/2048x2048.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="//stephanemourey.fr/res/img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="//stephanemourey.fr/res/img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="//stephanemourey.fr/res/img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="//stephanemourey.fr/res/img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="//stephanemourey.fr/res/img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="//stephanemourey.fr/res/img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="//stephanemourey.fr/res/img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="//stephanemourey.fr/res/img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="//stephanemourey.fr/res/img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="//stephanemourey.fr/res/img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="//stephanemourey.fr/res/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="//stephanemourey.fr/res/img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="//stephanemourey.fr/res/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="//stephanemourey.fr/res/img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="//stephanemourey.fr/res/img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 
+        <link rel="stylesheet" href="//stephanemourey.fr/res/webfonts/alegreya/stylesheet.css">
         <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/github.css" />
         <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/atom.xml" title="{{ site.title }} activity feed" />
         {% block head_styles %}
@@ -38,7 +40,7 @@
         {% block head_scripts %}
         {% endblock %}
     </head>
-    <body>
+    <body class="reading">
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container">
@@ -49,6 +51,9 @@
                 </div>
             </nav>
         </header>
+        {% if page.img %}
+					<div class="img" style="background-image:url({{ page.img }})"></div>
+				{% endif %}
         <main role="main" class="container">
             <div class="row">
                 <div class="col-sm-8">
