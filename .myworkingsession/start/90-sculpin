@@ -1,0 +1,4 @@
+#!/bin/bash
+vendor/bin/sculpin generate --watch --server &
+firefox http://localhost:8000 &
+
