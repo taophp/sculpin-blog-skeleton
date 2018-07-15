@@ -63,5 +63,46 @@ div.img {
 	margin-top: 64px;
 	background: fixed;
 	background-position-y: 64px;
-	/*background-size:cover;*/
+	background-position-x: center;
+	display:flex;
+	flex-direction:row-reverse;
+}
+
+#imgCredits {
+	display:none;
+	background: rgba(100%,100%,100%,.7);
+	padding: .5em 1em;
+	float: right;
+	position: relative;
+	bottom: 0;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-size: 16px;
+	align-self:flex-end;
+	line-height:170%;
+}
+#imgCredits a {
+	color: crimson;
+}
+#imgCredits span.title {
+	font-size:130%;
+	font-style:italic;
+	text-decoration:underline;
+}
+
+div.img:hover div#imgCredits {
+	display:inline-block;
+}
+
+footer {
+	font-size: 80%;
+	line-height:80%;
+	text-align: center;
+	margin-top: 3em;
+}
+
+div.licence {
+	border-top: solid 1px silver;
+	font-size:80%;
+	padding-top:.5em;
+	margin-top:.5em;
 }

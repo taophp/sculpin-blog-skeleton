@@ -51,8 +51,22 @@
                 </div>
             </nav>
         </header>
-        {% if page.img %}
-					<div class="img" style="background-image:url({{ page.img }})"></div>
+        {% if page.img2 %}
+					{% if page.imgStyle %}
+						<div class="img" style="background-image:url({{ page.img2 }});{{ page.imgStyle }}">
+					{% else %}
+						<div class="img" style="background-image:url({{ page.img2 }})">
+					{% endif %}
+        {% elseif page.img %}
+						<div class="img" style="background-image:url({{ page.img }})">
+				{% endif %}
+				{% if page.img %}
+					<div id="imgCredits">
+						<span class="title">À propos de l'image</span><br>
+						Auteur: {{ page.imgAuthor|raw }}<br>
+						<a href="{{ page.imgSrc }}">Source</a>
+					</div>
+				</div>
 				{% endif %}
         <main role="main" class="container">
             <div class="row">
@@ -61,6 +75,15 @@
                 </div>
             </div>
         </main>
+
+        <footer>
+					<div class="menu">
+						<a href="mailto:steph@stephanemourey.fr">Contact</a>
+					</div>
+					<div class="licence">
+						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br>Cette œuvre est mise à disposition selon les termes de la <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International</a>.
+					</div>
+        </footer>
 
         <script src="{{ site.url }}/components/jquery/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -73,5 +96,6 @@
 
         {% block scripts_after %}
         {% endblock %}
+<script src="//stephanemourey.fr/res/main.js"></script>
     </body>
 </html>
